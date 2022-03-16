@@ -2,10 +2,25 @@
     font-family: 'Rochester';
     font-style: normal;
     box-shadow: 0px 1px 0px black;
+    padding-top: 43px;
 }
 
 #description {
     font-size: 12px;
+}
+
+#card-holder {
+    width: 262px;
+}
+
+#cart-img {
+    height: 60px;
+    width: 80px;
+}
+
+#main {
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .cancel {
@@ -115,4 +130,77 @@
     font-style: normal;
     font-size: 48px;
     font-weight: 400;
+}
+
+@media (max-width:768px) {
+    #banner {
+        visibility: hidden;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        box-shadow: 0px 0px 0px black;
+        height: 0px;
+    }
+    #navbar {
+        background-color: #FDCD55;
+        margin-left: 63px;
+        margin-right: 59px;
+        margin-top: initial;
+        box-shadow: 0px 0px 0px black;
+        height: initial;
+        min-height: 39px;
+    }
+    #brand {
+        box-shadow: 0px 0px 0px black;
+    }
+    #title {
+        visibility: hidden;
+        height: 0px;
+    }
+    #detail-title {
+        font-size: 18px;
+        box-shadow: 0px 0px 0px black;
+    }
+    #detail-content {
+        padding-right: 21px;
+        padding-left: 31px;
+    }
+    .table {
+        border: 1px solid black;
+    }
+    #popover {
+        top: 136px;
+        width: 357px;
+        height: 500px;
+        border: 1px solid black;
+    }
+    .question {
+        box-shadow: 0px 0px 0px black;
+    }
+    .title-popover {
+        box-shadow: 0px 0px 0px black;
+    }
+    #popover-container {
+        padding-left: 24px;
+        padding-right: 33px;
+    }
+    .confirm-popover {
+        width: 308px;
+    }
+    #brand-title {
+        font-size: 48px;
+    }
+    #cart-img {
+        height: 47px;
+        width: 39px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #cat1,#cat2,#cat3,#cat4,#cat5 {
+        color: black;
+    }
+    #main {
+        margin-left: initial;
+        margin-right: initial;
+        justify-content: center;
+    }
 }

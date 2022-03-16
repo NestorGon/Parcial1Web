@@ -103,10 +103,11 @@ function removeCart(name) {
 
 function orderDetail() {
     let body = '';
-    let total = 0;
+    let total = 0; 
     cart.forEach( (element,index) => {
         total += element.item.price*element.qty;
-        body += `
+        if (screen.width>700) {
+            body += `
             <tr>
                 <th scope="row">${index+1}</th>
                 <td>${element.qty}</td>
@@ -118,10 +119,23 @@ function orderDetail() {
                     <button class="btn btn-warning text-light" onclick="removeCart('${element.item.name}');orderDetail()">-</button>
                 </td>
             </tr>
-        `;
+            `;
+        } else {
+            body += `
+            <tr>
+                <td>${element.qty} ${element.item.name}</td>
+                <td>
+                    <button class="btn btn-warning text-light" onclick="addCart('${element.item.name}','${element.item.category}');orderDetail()">+</button>
+                    <button class="btn btn-warning text-light" onclick="removeCart('${element.item.name}');orderDetail()">-</button>
+                </td>
+            </tr>
+            `;
+        }
+        
     });
     let main = document.querySelector('#main');
-    main.innerHTML = `
+    if (screen.width>700) {
+        main.innerHTML = `
         <h1 class="col-12 text-center" id="detail-title">ORDER DETAIL</h1>
         <div class="container-fluid" id="detail-content">
             <table class="table table-striped table-borderless">
@@ -147,7 +161,28 @@ function orderDetail() {
                 </div>
             </div>
         </div>
+        `;
+    } else {
+        main.innerHTML = `
+        <h1 class="col-12 text-center" id="detail-title">ORDER DETAIL</h1>
+        <div class="container-fluid" id="detail-content">
+            <table class="table table-secondary table-borderless">
+                <tbody>
+                    ${body}
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-start mt-4 mb-5">
+                <strong>Total: $${total}</strong>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div>
+                    <button class="cancel" onclick="showPopover()">Cancel</button>
+                    <button class="confirm" onclick="confirmOrder()">Confirm order</button>
+                </div>
+            </div>
+        </div>
     `;
+    }
 }
 
 function showPopover() {
