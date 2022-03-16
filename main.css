@@ -1,8 +1,35 @@
 #brand {
     font-family: 'Rochester';
     font-style: normal;
+    box-shadow: 0px 15px 0px green;
 }
 
 #description {
     font-size: 12px;
+}
+
+.cancel {
+    background-color: #8C162C;
+    color: white;
+}
+
+.confirm {
+    background-color: #708C32;
+    color: white;
+}
+
+#popover {
+    visibility: hidden;
+}
+
+#add-cart {
+    background-color: #F2A950;
+}
+
+#navbar {
+    background-color: #333A40;
+}
+
+.card-image {
+    width: 175px;
 }
