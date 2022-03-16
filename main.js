@@ -36,20 +36,20 @@ function renderCategory(category) {
     else
         list = drink;
     let main = document.querySelector('#main');
-    main.innerHTML = `<h1 class="col-12 text-center">${category.toUpperCase()}</h1>`;
+    main.innerHTML = `<h1 class="col-12 text-center" id="title">${category.toUpperCase()}</h1>`;
     list.forEach( element => {
         element.category = category;
         main.innerHTML +=`
-        <div class="col-3">
+        <div class="col-md-3 col-xs-6 d-flex align-item-md-stretch pb-3" id="card-holder">
             <div class="card">
                 <div class="d-flex justify-content-center pt-3">
                     <img src="${element.image}" class="card-img-top card-image" alt="...">
                 </div>
-                <div class="card-body">
+                <div class="card-body d-flex flex-column flex-xs-shrink-1">
                     <h5 class="card-title">${element.name}</h5>
                     <p class="card-text" id="description">${element.description}</p>
                     <p><strong>$${element.price}</strong></p>
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center mt-auto">
                         <a class="btn" onclick="addCart('${element.name}','${category}')" id="add-cart">Add to cart</a>
                     </div>
                 </div>
@@ -122,27 +122,29 @@ function orderDetail() {
     });
     let main = document.querySelector('#main');
     main.innerHTML = `
-        <h1 class="col-12 text-center">ORDER DETAIL</h1>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                <th scope="col">Item</th>
-                <th scope="col">Qty.</th>
-                <th scope="col">Description</th>
-                <th scope="col">Unit price</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Modify</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${body}
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-between">
-            <strong>Total: $${total}</strong>
-            <div>
-                <button class="cancel" onclick="showPopover()">Cancel</button>
-                <button class="confirm" onclick="confirmOrder()">Confirm order</button>
+        <h1 class="col-12 text-center" id="detail-title">ORDER DETAIL</h1>
+        <div class="container-fluid" id="detail-content">
+            <table class="table table-striped table-borderless">
+                <thead>
+                    <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Qty.</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Unit price</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${body}
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between">
+                <strong>Total: $${total}</strong>
+                <div>
+                    <button class="cancel" onclick="showPopover()">Cancel</button>
+                    <button class="confirm" onclick="confirmOrder()">Confirm order</button>
+                </div>
             </div>
         </div>
     `;
@@ -159,7 +161,7 @@ function hidePopover() {
 function cancelOrder() {
     hidePopover();
     cart = [];
-    renderCategory('Burguer');
+    renderCategory('Burguers');
     document.querySelector("#cart").innerText = '';
 }
 

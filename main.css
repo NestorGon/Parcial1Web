@@ -1,7 +1,7 @@
 #brand {
     font-family: 'Rochester';
     font-style: normal;
-    box-shadow: 0px 15px 0px green;
+    box-shadow: 0px 1px 0px black;
 }
 
 #description {
@@ -11,15 +11,22 @@
 .cancel {
     background-color: #8C162C;
     color: white;
+    height: 47px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .confirm {
     background-color: #708C32;
     color: white;
+    height: 47px;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 #popover {
     visibility: hidden;
+    height: 447px;
 }
 
 #add-cart {
@@ -28,8 +35,84 @@
 
 #navbar {
     background-color: #333A40;
+    margin-top: 10px;
+    box-shadow: 0px 1px 0px black;
+    height: 81px;
 }
 
 .card-image {
     width: 175px;
+}
+
+#banner {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    box-shadow: 0px 1px 0px black;
+}
+
+#title {
+    font-family: 'Roboto';
+    font-size: 30px;
+    padding-top: 30px;
+    box-shadow: 0px 1px 0px black;
+}
+
+#detail-title {
+    font-family: 'Roboto';
+    font-size: 30px;
+    padding-top: 15px;
+    padding-bottom: 23px;
+    box-shadow: 0px 1px 0px black;
+}
+
+#detail-content {
+    padding-right: 50px;
+    padding-left: 100px;
+}
+
+.card-img-top {
+    width: 175px;
+    height: 130px;
+    object-fit: cover;
+}
+
+#cart {
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 12px;
+}
+
+#popover-container {
+    padding-top: 42px;
+    padding-bottom: 73px;
+    padding-left: 48px;
+    padding-right: 40px;
+}
+
+.confirm-popover {
+    border: none;
+    margin-top: 69px;
+    margin-bottom: 18px;
+}
+
+.cancel-popover {
+    border: none;
+}
+
+.question {
+    padding-top: 26px;
+    padding-bottom: 26px;
+    box-shadow: 0px 1px 0px black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.title-popover {
+    box-shadow: 0px 1px 0px black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 48px;
+    font-weight: 400;
 }
